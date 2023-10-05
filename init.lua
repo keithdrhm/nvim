@@ -29,10 +29,8 @@ vim.o.cmdheight = 1
 vim.o.smarttab = true
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
--- colors
+-- misc 
 vim.cmd('syntax enable')
---vim.cmd('colorscheme OceanicNext')
--- kill all swap files
 vim.opt.swapfile = false
 
 return require('lazy').setup('plugins')
