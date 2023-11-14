@@ -32,6 +32,6 @@ vim.o.shiftwidth = 2
 -- misc 
 vim.cmd('syntax enable')
 vim.opt.swapfile = false
-
+vim.o.incsearch = true
 return require('lazy').setup('plugins')
 
