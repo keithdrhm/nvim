@@ -6,14 +6,14 @@ return {
     },
     keys = {
       {
-        "<leader>gf",
+        "<leader>pf",
         function()
           require("telescope.builtin").git_files({})
         end,
         desc = "Search within current git repo",
        },
       {
-        "<leader>ag",
+        "<leader>ps",
         function()
           require("telescope.builtin").live_grep({})
         end,

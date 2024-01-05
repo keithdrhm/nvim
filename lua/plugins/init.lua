@@ -32,14 +32,26 @@ return {
   -------------------
   -- style + colors
   -------------------
-  {
-    'mhartington/oceanic-next',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme OceanicNext]])
-    end,
-  },
+  'rebelot/kanagawa.nvim',
   'vim-airline/vim-airline',
-  'vim-airline/vim-airline-themes'
+  'vim-airline/vim-airline-themes',
+ -- harpoon used for file marking
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+  },
+-- Linting
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate"
+  },
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+  'neovim/nvim-lspconfig',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/nvim-cmp',
+  'L3MON4D3/LuaSnip',
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+
 }
