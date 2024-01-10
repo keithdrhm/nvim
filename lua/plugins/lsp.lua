@@ -33,7 +33,7 @@ return{
     lsp.extend_lspconfig() -- needed to make sure linting works in every directory
     mason.setup()
     masonConfig.setup({
-      ensure_installed = {'tsserver', 'eslint', 'rust_analyzer', 'tailwindcss', 'cssls', 'angularls', 'html', 'jsonls', 'biome'},
+      ensure_installed = {'eslint', 'rust_analyzer', 'tailwindcss', 'cssls', 'angularls', 'html', 'jsonls', 'biome'},
       handlers = {
         lsp.default_setup
       }
