@@ -1,7 +1,7 @@
 return {
   'preservim/nerdcommenter',
    -- toggle using <leader>ca 
-   config = function() 
+   config = function()
      vim.g.NERDCustomDelimiters = {
        javascript = {
          left = '//',
@@ -10,5 +10,5 @@ return {
          rightAlt = ' */}'
        }
       }
-  end 
+  end
 }

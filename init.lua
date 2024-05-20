@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 -- General vim mappings --
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pb", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pp", [["0p]])
 
 vim.o.title = true
 -- line numbers

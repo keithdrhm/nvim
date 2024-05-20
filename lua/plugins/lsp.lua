@@ -10,18 +10,19 @@ return{
     {'neovim/nvim-lspconfig'},             -- Required
     {                                      -- Optional
       'williamboman/mason.nvim',
-      run = function()
-        pcall(vim.cmd, 'MasonUpdate')
-      end,
     },
     {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
     -- Autocompletion
+    {'neovim/nvim-lspconfig'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-path'},
+    {'hrsh7th/cmp-cmdline'},
     {'hrsh7th/nvim-cmp'},     -- Required
-    {'hrsh7th/cmp-nvim-lsp'}, -- Required
     {'L3MON4D3/LuaSnip'},     -- Required
    },
-  config = function() 
+  config = function()
     local cmp = require('cmp')
     local cmp_select = {behavior = cmp.SelectBehavior.Select}
     local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -33,7 +34,18 @@ return{
     lsp.extend_lspconfig() -- needed to make sure linting works in every directory
     mason.setup()
     masonConfig.setup({
-      ensure_installed = {'eslint', 'rust_analyzer', 'tailwindcss', 'cssls', 'angularls', 'html', 'jsonls', 'biome'},
+      ensure_installed = {
+        'angularls',
+        'bashls',
+        'cssls',
+        'cssmodules_ls',
+        'eslint',
+        'html',
+        'lua_ls',
+        'marksman',
+        'tailwindcss',
+        'jsonls'
+      },
       handlers = {
         lsp.default_setup
       }

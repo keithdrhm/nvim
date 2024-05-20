@@ -7,7 +7,10 @@ return {
     -- or,                          branch = '0.1.x',
     dependencies  = { {'nvim-lua/plenary.nvim'} }
   },
-
+  ---------------------------------
+  -- co-pilot
+  ---------------------------------
+  'github/copilot.vim',
   -------------------------------
   -- text editing optimizations
   -------------------------------
@@ -57,4 +60,18 @@ return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  --- VIM TIPS
+ {
+  "TobinPalmer/Tip.nvim",
+  event = "VimEnter",
+  init = function()
+    -- Default config
+    --- @type Tip.config
+    require("tip").setup({
+      seconds = 2,
+      title = "Tip!",
+      url = "https://vtip.43z.one", -- Or https://vimiscool.tech/neotip
+    })
+  end,
+}
 }
