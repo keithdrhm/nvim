@@ -44,7 +44,8 @@ return{
         'lua_ls',
         'marksman',
         'tailwindcss',
-        'jsonls'
+        'jsonls',
+	'biome',
       },
       handlers = {
         lsp.default_setup

@@ -8,10 +8,14 @@ return {
     dependencies  = { {'nvim-lua/plenary.nvim'} }
   },
   ---------------------------------
-  -- co-pilot
+	--hardtime
   ---------------------------------
-  'github/copilot.vim',
-  -------------------------------
+  {
+   "m4xshen/hardtime.nvim",
+   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+   opts = {}
+  },
+  ---------------------------------
   -- text editing optimizations
   -------------------------------
   -- tab autocomplete
@@ -35,9 +39,60 @@ return {
   -------------------
   -- style + colors
   -------------------
-  'rebelot/kanagawa.nvim',
+   {
+      'sainnhe/gruvbox-material',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        -- Optionally configure and load the colorscheme
+        -- directly inside the plugin declaration.
+        vim.g.gruvbox_material_enable_italic = true
+	vim.g.gruvbox_material_background = 'hard'
+	vim.g.gruvbox_material_enable_bold = true
+        vim.cmd.colorscheme('gruvbox-material')
+      end
+  },
   'vim-airline/vim-airline',
   'vim-airline/vim-airline-themes',
+  {
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
+  config = function()
+    require('dashboard').setup {
+      -- config
+      theme = 'hyper',
+    config = {
+      week_header = {
+       enable = true,
+      },
+      shortcut = {
+        { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+        {
+          icon = ' ',
+          icon_hl = '@variable',
+          desc = 'Files',
+          group = 'Label',
+          action = 'Telescope find_files',
+          key = 'f',
+        },
+        {
+          desc = ' Apps',
+          group = 'DiagnosticHint',
+          action = 'Telescope app',
+          key = 'a',
+        },
+        {
+          desc = ' dotfiles',
+          group = 'Number',
+          action = 'Telescope dotfiles',
+          key = 'd',
+        },
+      },
+    },
+    }
+  end,
+  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+},
  -- harpoon used for file marking
   {
     "ThePrimeagen/harpoon",

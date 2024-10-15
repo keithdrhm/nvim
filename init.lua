@@ -28,6 +28,8 @@ vim.o.cmdheight = 1
 
 -- down with mouse addiction
 vim.opt.mouse = ''
+vim.g.airline_theme = 'gruvbox_material'
 
 return require('lazy').setup('plugins')
+
 
